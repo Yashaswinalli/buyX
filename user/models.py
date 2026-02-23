@@ -299,7 +299,7 @@ def send_order_sms(phone, order_id, status):
         
         client = twilio.rest.Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
         
-        message = f"Xavier Mobiles: Your order {order_id} has been {status}. Thank you for shopping with us!"
+        message = f"{settings.SITE_NAME}: Your order {order_id} has been {status}. Thank you for shopping with us!"
         
         message = client.messages.create(
             body=message,
